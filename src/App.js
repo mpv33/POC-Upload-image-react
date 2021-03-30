@@ -16,6 +16,7 @@ const App = props => {
       withIcon={true}
       onChange={onDrop}
       imgExtension={[".jpg",]}
+      buttonText='Upload images'
       maxFileSize={1242880}
       withPreview={true}
       accept="accept=image/*"
