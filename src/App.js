@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+import React, { useState } from "react";
+import ImageUploader from "react-images-upload";
+
+const App = props => {
+  const [pictures, setPictures] = useState([]);
+
+  const onDrop = picture => {
+    setPictures([...pictures, picture]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ImageUploader
+       {...props}
+      label='Max file size: 1mb, accepted: jpg file only'
+      withIcon={true}
+      onChange={onDrop}
+      imgExtension={[".jpg",]}
+      maxFileSize={1242880}
+      withPreview={true}
+      accept="accept=image/*"
+      // singleImage={false}
+    />
   );
-}
+};
 
 export default App;
