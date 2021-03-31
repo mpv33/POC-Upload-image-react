@@ -1,27 +1,16 @@
 
+import React from "react";
+import AprilFools from "./AprilFools";
+import UploadImage from "./uploadImage";
 
-import React, { useState } from "react";
-import ImageUploader from "react-images-upload";
-
-const App = props => {
-  const [pictures, setPictures] = useState([]);
-
-  const onDrop = picture => {
-    setPictures([...pictures, picture]);
-  };
+const App = () => {
+ 
   return (
-    <ImageUploader
-       {...props}
-      label='Max file size: 1mb, accepted: jpg file only'
-      withIcon={true}
-      onChange={onDrop}
-      imgExtension={[".jpg",]}
-      buttonText='Upload images'
-      maxFileSize={1242880}
-      withPreview={true}
-      accept="accept=image/*"
-      // singleImage={false}
-    />
+  <div> 
+     <AprilFools />
+     {/* <UploadImage /> */}
+
+  </div>
   );
 };
 
